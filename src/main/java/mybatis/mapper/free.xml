@@ -18,7 +18,6 @@
 		UPDATE FREE
 		   SET HIT = HIT + 1
 		 WHERE FREENO = #{freeNo}
-			
 	</update>
 	
 	

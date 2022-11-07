@@ -16,6 +16,7 @@ public class FreeDetailService implements FreeService {
 		Optional<String> opt = Optional.ofNullable(request.getParameter("freeNo"));
 		int freeNo = Integer.parseInt(opt.orElse("0"));
 		
+		
 		request.setAttribute("free", FreeDAO.getInstance().selectFreeByNo(freeNo));
 		return new ActionForward("/free/detail.jsp", false);
 	}

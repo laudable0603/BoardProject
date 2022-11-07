@@ -67,6 +67,16 @@ public class FreeDAO {
 		ss.close();
 		return result;
 	}
+	public int hitCount(int freeNo) {
+		SqlSession ss = factory.openSession(false);
+		int result = ss.update(mapper + "hitCount", freeNo);
+		if(result > 0) {
+			ss.commit();
+		}
+		ss.close();
+		return result;
+	}
+	
 	//게시글 상세
 	public Free selectFreeByNo(int freeNo) {
 		SqlSession ss = factory.openSession();
